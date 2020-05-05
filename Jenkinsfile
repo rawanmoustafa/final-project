@@ -17,7 +17,7 @@ pipeline {
          }      
          stage('Upload to AWS') {
               steps {
-                  withAWS(region:'us-east-2',credentials:'827a6c93-55ec-47ec-af92-a6f7bc549f50') {
+                  withAWS(region:'us-west-2',credentials:' d6957c84-b123-4021-8003-8abbf6f4f546') {
                   sh 'echo "Uploading content with AWS creds"'
                       s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'index.html', bucket:'rawan-bucket-95')
                   }
