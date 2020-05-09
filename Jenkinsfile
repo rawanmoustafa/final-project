@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Lint Dockerfile') {
             steps {
-                sh 'hadolint Dockerfile'
+                sh 'tidy -q -e *.html'
             }
         }
         stage('Build Docker Image') {
