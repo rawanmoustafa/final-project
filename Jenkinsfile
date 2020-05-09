@@ -3,7 +3,7 @@ pipeline {
      stages {
          stage('Lint HTML') {
               steps {
-                  sh 'hadolint Dockerfile'
+                  sh 'docker run --rm -i hadolint/hadolint < Dockerfile'
               }
          }     
      }
