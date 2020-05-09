@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'sudo ./run_docker.sh'
+                sh 'chmod +x run_docker.sh && sudo ./run_docker.sh'
             }
         }
         stage('Push to Docker Hub') {
