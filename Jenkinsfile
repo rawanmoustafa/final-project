@@ -4,7 +4,7 @@ pipeline {
     }
     agent any
     stages {
-        stage('Lint HTML') {
+        stage('Lint Dockerfile') {
             steps {
                 sh 'hadolint Dockerfile'
             }
