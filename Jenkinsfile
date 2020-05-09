@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh './create_infra.sh'
+                sh './create.sh'
             }
         }
     }
