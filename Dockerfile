@@ -12,6 +12,6 @@ RUN apt-get update && apt-get -y upgrade
 
 ## Step 4:
 # Expose port 80
-EXPOSE 80
+EXPOSE 8000
 
 
