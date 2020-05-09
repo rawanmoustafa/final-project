@@ -12,8 +12,8 @@ dockerpath="rawanhassan/first-repo"
 # Authenticate & Tag
 echo "Docker ID and Image: $dockerpath"
 docker login &&\
-    docker image tag flasksklearn $dockerpath
+    docker image tag tomcat rawanhassan/first-repo
 
 # Step 3:
 # Push Image
-docker image push $dockerpath
+docker image push rawanhassan/first-repo
