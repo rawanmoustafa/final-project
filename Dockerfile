@@ -9,7 +9,7 @@ COPY /new/index.html /var/www/html/
 
 EXPOSE 8000
 
-CMD ["apachectl", "-D", "FOREGROUND"]FROM nginx
+CMD ["apachectl", "-D", "FOREGROUND"]
 
 
 
