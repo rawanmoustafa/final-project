@@ -61,7 +61,7 @@ Resources:
           apt-get update
           apt-get install -y docker-ce
           usermod -aG docker ubuntu
-          apt-get install apache2 -y
+          apt-get install nginx -y
           git clone https://github.com/rawanmoustafa/final-project.git /new
           cd /new
           sudo ./run_docker.sh
