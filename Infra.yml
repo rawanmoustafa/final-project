@@ -64,6 +64,7 @@ Resources:
           apt-get install nginx -y
           git clone https://github.com/rawanmoustafa/final-project.git /new
           cd /new
+          sudo chmod +x run_docker.sh
           sudo ./run_docker.sh
       ImageId: ami-003634241a8fcdec0
       KeyName: rawan
