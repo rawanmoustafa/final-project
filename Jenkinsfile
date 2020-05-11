@@ -1,22 +1,28 @@
 pipeline {
-  agent any
-  stages {
-
-    stage('Lint HTML') {
-      steps {
-        sh 'tidy -q -e *.html'
-      }
+    environment {
+        USER_CREDENTIALS = credentials('dockerhub')
     }
-    
-    stage('Upload to AWS') {
-      steps {
-        withAWS(region: 'us-west-2', credentials: '	0c87a023-f707-4828-838c-7293710b813f') {
-          sh 'echo "Uploading content with AWS creds"'
-          s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file: 'index.html', bucket: 'rawan-bucket-95')
+    agent any
+    stages {
+        stage('Lint index.html') {
+            steps {
+                sh 'tidy -q -e *.html'
+            }
         }
-
-      }
+        stage('Build Docker Image') {
+            steps {
+                sh 'chmod +x run_docker.sh && sudo ./run_docker.sh'
+            }
+        }
+        stage('Push to Docker Hub') {
+            steps {
+                sh 'sudo ./upload_docker.sh rawanmoustafa 52015991Rr@'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'sudo ./create.sh'
+            }
+        }
     }
-
-  }
 }
