@@ -6,14 +6,14 @@
 # Step 1:
 # Create your own docker ID here
 # dockerpath=<your docker ID/path>
-dockerpath="rawanhassan/first-repo"
+dockerpath="rawanmoustafa/capstone-repo"
 
 # Step 2:  
 # Authenticate & Tag
-echo "Docker ID and Image: $dockerpath"
+echo "Docker ID and Image: rawanmoustafa/capstone-repo"
 docker login &&\
-    docker image tag flasksklearn $dockerpath
+    docker image tag project rawanmoustafa/capstone-repo
 
 # Step 3:
 # Push Image
-docker image push $dockerpath
+docker image push rawanmoustafa/capstone-repo
