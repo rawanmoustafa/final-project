@@ -8,7 +8,6 @@
 # dockerpath=<your docker ID/path>
 dockerpath="rawanmoustafa/capstone-repo"
 
-docker build -t project5 .
 # Step 2:  
 # Authenticate & Tag
 echo "Docker ID and Image: rawanmoustafa/capstone-repo"
