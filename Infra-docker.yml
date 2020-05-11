@@ -59,21 +59,13 @@ Resources:
           $(lsb_release -cs) \
           stable"
           apt-get update
-          sudo curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-          sudo chmod +x ./kubectl
-          sudo mv ./kubectl /usr/local/bin/kubectl
-          sudo apt-get -y update && sudo apt-get install docker.io -y
-          curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && sudo chmod +x minikube && sudo mv minikube /usr/local/bin/
-          minikube version
-          sudo -i
-          minikube start --vm-driver=none
-          minikube status
+          apt-get install -y docker-ce
           usermod -aG docker ubuntu
           apt install nginx -y
           git clone https://github.com/rawanmoustafa/final-project.git /new
           cd /new
-          sudo chmod +x run_kubernetes.sh
-          sudo ./run_kubernetes.sh
+          sudo chmod +x run_docker.sh
+          sudo ./run_docker.sh
       ImageId: ami-003634241a8fcdec0
       KeyName: rawan
       SecurityGroups:
